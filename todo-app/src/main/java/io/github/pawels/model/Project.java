@@ -1,22 +1,24 @@
 package io.github.pawels.model;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.lang.reflect.Type;
 import java.util.Set;
 
 @Entity
 @Table(name = "projects")
+@NoArgsConstructor
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotBlank(message = "Wymagane podanie opisu projektu")
     private String description;
     @OneToMany(mappedBy = "project")
     private Set<TaskGroup> groups;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "project")
-    private Set<ProjectSteps> steps;
+    private Set<ProjectStep> steps;
 
     public int getId() {
         return id;
@@ -42,11 +44,11 @@ public class Project {
         this.groups = groups;
     }
 
-    public Set<ProjectSteps> getSteps() {
+    public Set<ProjectStep> getSteps() {
         return steps;
     }
 
-    public void setSteps(Set<ProjectSteps> steps) {
+    public void setSteps(Set<ProjectStep> steps) {
         this.steps = steps;
     }
 }

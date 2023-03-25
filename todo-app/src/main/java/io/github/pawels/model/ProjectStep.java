@@ -5,12 +5,15 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "project_steps")
-public class ProjectSteps {
+public class ProjectStep {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotBlank(message = "Wymagane podanie opisu")
     private String description;
+
+
+
     private int daysToDeadline;
     @ManyToOne
     @JoinColumn(name = "project_id")
@@ -38,5 +41,13 @@ public class ProjectSteps {
 
     public void setProject(Project project) {
         this.project = project;
+    }
+
+    public int getDaysToDeadline() {
+        return daysToDeadline;
+    }
+
+    public void setDaysToDeadline(int daysToDeadline) {
+        this.daysToDeadline = daysToDeadline;
     }
 }

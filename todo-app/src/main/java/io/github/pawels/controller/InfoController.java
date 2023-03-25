@@ -2,8 +2,7 @@ package io.github.pawels.controller;
 
 
 
-import io.github.pawels.TaksConfigurationProperties;
-import org.springframework.beans.factory.annotation.Value;
+import io.github.pawels.TaskConfigurationProperties;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class InfoController {
 
     private DataSourceProperties dataSource;
-    private TaksConfigurationProperties myProp;
+    private TaskConfigurationProperties myProp;
 
-    public InfoController(DataSourceProperties dataSource, TaksConfigurationProperties myProp) {
+    public InfoController(DataSourceProperties dataSource, TaskConfigurationProperties myProp) {
         this.dataSource = dataSource;
         this.myProp = myProp;
     }

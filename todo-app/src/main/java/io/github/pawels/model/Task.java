@@ -25,10 +25,10 @@ public class Task {
     @JoinColumn(name = "task_group_id")
     private TaskGroup group;
 
-    @ManyToOne
-    @JoinColumn(name = "project_id")
-    private Project project;
-
+    public Task(String description, LocalDateTime deadline){
+        this.description = description;
+        this.deadline = deadline;
+    }
     public int getId() {
         return id;
     }

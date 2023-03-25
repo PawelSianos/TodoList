@@ -6,5 +6,5 @@ import java.util.Optional;
 public interface ProjectRepository {
     List<Project> findAll();
     Optional<Project> findById(Integer id);
-    TaskGroup save(Project entity);
+    Project save(Project entity);
 }

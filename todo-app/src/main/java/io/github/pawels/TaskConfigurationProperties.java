@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConfigurationProperties("task")
-public class TaksConfigurationProperties {
+public class TaskConfigurationProperties {
     private Template template;
 
     public Template getTemplate() {

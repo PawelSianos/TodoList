@@ -1,12 +1,10 @@
 package io.github.pawels.service;
 
-import io.github.pawels.TaskConfigurationProperties;
 import io.github.pawels.model.TaskGroup;
 import io.github.pawels.model.TaskGroupRepository;
 import io.github.pawels.model.TaskRepository;
 import io.github.pawels.model.projection.GroupReadModel;
 import io.github.pawels.model.projection.GroupWriteModel;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.RequestScope;
 

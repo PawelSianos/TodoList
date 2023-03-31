@@ -1,6 +1,7 @@
   package io.github.pawels.model.projection;
 
   import io.github.pawels.model.Task;
+  import io.github.pawels.model.TaskGroup;
 
   import java.time.LocalDateTime;
 
@@ -25,7 +26,7 @@
           this.deadline = deadline;
       }
 
-      public Task toTask(){
-            return new Task(description, deadline);
+      public Task toTask(TaskGroup result){
+            return new Task(description, deadline, result);
       }
   }
